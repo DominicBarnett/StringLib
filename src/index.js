@@ -50,6 +50,14 @@ function kebabCase(string) {
     return kebabCaseFinal
 }
 
+function snakeCase(string) {
+    lowercaseString = string.toLowerCase()
+    snakeCaseNoWhitespace = removeWhitespace(lowercaseString)
+    snakeCaseArray = snakeCaseNoWhitespace.split(' ')
+    snakeCaseFinal = snakeCaseArray.join('_')
+    return snakeCaseFinal
+}
+
 // test = capitalize("hey")
 // console.log(test)
 // test = capitalizeWords('hi i am paul')
@@ -61,3 +69,4 @@ module.exports.allCaps = allCaps
 module.exports.capitalizeWords = capitalizeWords
 module.exports.removeWhitespace = removeWhitespace
 module.exports.kebabCase = kebabCase
+module.exports.snakeCase = snakeCase

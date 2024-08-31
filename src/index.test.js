@@ -20,3 +20,6 @@ test('kebob case', () => {
     expect(fb.kebabCase("hello     WOrld")).toBe("hello-world")
 })
 
+test('snake case', () => {
+    expect(fb.snakeCase("hello     WOrld")).toBe("hello_world")
+})
