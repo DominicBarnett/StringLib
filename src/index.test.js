@@ -12,3 +12,6 @@ test('capitalize words', () => {
     expect(fb.capitalizeWords("hi i am paul")).toBe("Hi I Am Paul")
 })
 
+test('remove whitespace', () => {
+    expect(fb.removeWhitespace("          So            much               room       for                       activities")).toBe("So much room for activities")
+})
