@@ -15,3 +15,8 @@ test('capitalize words', () => {
 test('remove whitespace', () => {
     expect(fb.removeWhitespace("          So            much               room       for                       activities")).toBe("So much room for activities")
 })
+
+test('kebob case', () => {
+    expect(fb.kebabCase("hello     WOrld")).toBe("hello-world")
+})
+

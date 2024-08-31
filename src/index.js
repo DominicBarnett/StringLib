@@ -42,6 +42,14 @@ function removeWhitespace(string) {
     return final
 }
 
+function kebabCase(string) {
+    lowercaseString = string.toLowerCase()
+    kebabCaseNoWhitespace = removeWhitespace(lowercaseString)
+    kebabCaseArray = kebabCaseNoWhitespace.split(' ')
+    kebabCaseFinal = kebabCaseArray.join('-')
+    return kebabCaseFinal
+}
+
 // test = capitalize("hey")
 // console.log(test)
 // test = capitalizeWords('hi i am paul')
@@ -52,3 +60,4 @@ module.exports.capitalize = capitalize
 module.exports.allCaps = allCaps
 module.exports.capitalizeWords = capitalizeWords
 module.exports.removeWhitespace = removeWhitespace
+module.exports.kebabCase = kebabCase
