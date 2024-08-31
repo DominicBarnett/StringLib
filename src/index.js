@@ -8,6 +8,12 @@ function capitalize(string) {
     return final
 }
 
+function allCaps(string) {
+    final = string.toUpperCase()
+    return final
+}
+
 // test = capitalize("hey")
 // console.log(test)
 module.exports.capitalize = capitalize
+module.exports.allCaps = allCaps
