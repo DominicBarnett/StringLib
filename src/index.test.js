@@ -31,3 +31,7 @@ test('Camel case', () => {
 test('shift letters', () => {
     expect(fb.shift("Foo Bar")).toBe("oo BarF")
 })
+
+test('make hashtag', () => {
+    expect(fb.makeHashTag("Amazing bongo drums for sale")).toStrictEqual(['#amazing', '#bongo', '#drums'])
+})

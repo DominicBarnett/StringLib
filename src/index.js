@@ -84,6 +84,30 @@ function shift(string) {
     return final
 }
 
+function makeHashTag(string) {
+    stringArray = string.split(' ')
+    lengthSorted = []
+    // Check length of each string by calling length on each index then if longer splice to index 0 else push to end
+    for (let i = 0; i < stringArray.length; i++){
+        // console.log(i)
+        if (stringArray[i].length > stringArray[0].length) {
+            lengthSorted.splice(0,0, stringArray[i])
+        } else {
+            lengthSorted.push(stringArray[i])
+        }
+    }
+    final = []
+    // get the first 3 longest words add a # at the beginning of the word
+    for (let i = 0; i < 3; i++) {
+        word = lengthSorted[i].toLowerCase()
+        wordArray = word.split('')
+        wordArray.splice(0, 0, "#")
+        hashtag = wordArray.join('')
+        final.push(hashtag)
+        wordArray.length = 0
+    }
+    return final
+}
 // test = capitalize("hey")
 // console.log(test)
 // test = capitalizeWords('hi i am paul')
@@ -99,3 +123,4 @@ module.exports.kebabCase = kebabCase
 module.exports.snakeCase = snakeCase
 module.exports.camelCase = camelCase
 module.exports.shift = shift
+module.exports.makeHashTag = makeHashTag
