@@ -58,15 +58,35 @@ function snakeCase(string) {
     return snakeCaseFinal
 }
 
+function camelCase(string) {
+    wordList = string.split(' ')
+    // console.log(wordList)
+    camelCasearray = []
+    camelCasearray.push(wordList[0].toLowerCase())
+    // console.log(camelCasearray)
+    for (let i = 1; i < wordList.length; i++){
+        // console.log(i)
+        camelCasearray.push(capitalize(wordList[i]))
+    }
+    camelCasefinal = camelCasearray.join('')
+    // console.log("______________")
+    // console.log(camelCasearray)
+    // console.log("______________")
+    // console.log(camelCasestring)
+    return camelCasefinal
+}
+
 // test = capitalize("hey")
 // console.log(test)
 // test = capitalizeWords('hi i am paul')
 // console.log(test)
 // test = removeWhitespace("          So            much               room       for                       activities")
 // console.log(test)
+// test = camelCase("Camel case")
 module.exports.capitalize = capitalize
 module.exports.allCaps = allCaps
 module.exports.capitalizeWords = capitalizeWords
 module.exports.removeWhitespace = removeWhitespace
 module.exports.kebabCase = kebabCase
 module.exports.snakeCase = snakeCase
+module.exports.camelCase = camelCase

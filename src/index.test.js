@@ -23,3 +23,7 @@ test('kebob case', () => {
 test('snake case', () => {
     expect(fb.snakeCase("hello     WOrld")).toBe("hello_world")
 })
+
+test('Camel case', () => {
+    expect(fb.camelCase("Camel case")).toBe("camelCase")
+})
