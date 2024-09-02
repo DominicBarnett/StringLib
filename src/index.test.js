@@ -27,3 +27,7 @@ test('snake case', () => {
 test('Camel case', () => {
     expect(fb.camelCase("Camel case")).toBe("camelCase")
 })
+
+test('shift letters', () => {
+    expect(fb.shift("Foo Bar")).toBe("oo BarF")
+})

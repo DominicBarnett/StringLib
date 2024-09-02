@@ -76,6 +76,14 @@ function camelCase(string) {
     return camelCasefinal
 }
 
+function shift(string) {
+    string = string.split('')
+    firstLetter = string.splice(0,1)
+    string.push(firstLetter)
+    final = string.join('')
+    return final
+}
+
 // test = capitalize("hey")
 // console.log(test)
 // test = capitalizeWords('hi i am paul')
@@ -90,3 +98,4 @@ module.exports.removeWhitespace = removeWhitespace
 module.exports.kebabCase = kebabCase
 module.exports.snakeCase = snakeCase
 module.exports.camelCase = camelCase
+module.exports.shift = shift
