@@ -35,3 +35,7 @@ test('shift letters', () => {
 test('make hashtag', () => {
     expect(fb.makeHashTag("Amazing bongo drums for sale")).toStrictEqual(['#amazing', '#bongo', '#drums'])
 })
+
+test('is empty', () => {
+    expect(fb.isEmpty("                                            ")).toStrictEqual(true)
+})

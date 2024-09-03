@@ -108,6 +108,18 @@ function makeHashTag(string) {
     }
     return final
 }
+
+function isEmpty(string) {
+    trimmed = string.trim()
+    // takes out all white space on the ends
+    stringArray = trimmed.split('')
+    // splits string into an array of characters
+    if (stringArray.length === 0) {
+        return true
+    } else {
+        return false
+    }
+}
 // test = capitalize("hey")
 // console.log(test)
 // test = capitalizeWords('hi i am paul')
@@ -124,3 +136,4 @@ module.exports.snakeCase = snakeCase
 module.exports.camelCase = camelCase
 module.exports.shift = shift
 module.exports.makeHashTag = makeHashTag
+module.exports.isEmpty = isEmpty
