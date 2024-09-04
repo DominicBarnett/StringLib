@@ -1,139 +1,100 @@
-
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.capitalize = capitalize;
+exports.allCaps = allCaps;
+exports.capitalizeWords = capitalizeWords;
+exports.removeWhitespace = removeWhitespace;
+exports.kebabCase = kebabCase;
+exports.snakeCase = snakeCase;
+exports.camelCase = camelCase;
+exports.shift = shift;
+exports.makeHashTag = makeHashTag;
+exports.isEmpty = isEmpty;
 function capitalize(string) {
-    firstLetter = string[0].toUpperCase()
-    // console.log(firstLetter)
-    rest = string.slice(1)
-    // console.log(firstLetter + rest)
-    final = firstLetter + rest
-    return final
+    var firstLetter = string[0].toUpperCase();
+    var rest = string.slice(1);
+    var final = firstLetter + rest;
+    return final;
 }
-
 function allCaps(string) {
-    final = string.toUpperCase()
-    return final
+    var final = string.toUpperCase();
+    return final;
 }
-
 function capitalizeWords(string) {
-        sentence = string.split(' ')
-        // console.log(sentence)
-        finalSentence = []
-        for (let i = 0; i < sentence.length; i++){
-            // console.log(i)
-            finalSentence.push(capitalize(sentence[i]))
-        }
-        // console.log(finalSentence)
-        finalResult = finalSentence.join(' ')
-        return finalResult
+    var sentence = string.split(' ');
+    var finalSentence = [];
+    for (var i = 0; i < sentence.length; i++) {
+        finalSentence.push(capitalize(sentence[i]));
+    }
+    var finalResult = finalSentence.join(' ');
+    return finalResult;
 }
-
 function removeWhitespace(string) {
-    trim = string.trim()
-    // console.log(trim)
-    inBetween = trim.split(' ')
-    for (let index = 0; index < inBetween.length; index++) {
+    var trim = string.trim();
+    var inBetween = trim.split(' ');
+    for (var index = 0; index < inBetween.length; index++) {
         if (inBetween[index] === ' ' || inBetween[index] === '') {
             inBetween.splice(index, 1);
             index--;
         }
     }
-    // console.log(inBetween)
-    final = inBetween.join(' ')
-    // console.log(final)
-    return final
+    var final = inBetween.join(' ');
+    return final;
 }
-
 function kebabCase(string) {
-    lowercaseString = string.toLowerCase()
-    kebabCaseNoWhitespace = removeWhitespace(lowercaseString)
-    kebabCaseArray = kebabCaseNoWhitespace.split(' ')
-    kebabCaseFinal = kebabCaseArray.join('-')
-    return kebabCaseFinal
+    var lowercaseString = string.toLowerCase();
+    var kebabCaseNoWhitespace = removeWhitespace(lowercaseString);
+    var kebabCaseArray = kebabCaseNoWhitespace.split(' ');
+    var kebabCaseFinal = kebabCaseArray.join('-');
+    return kebabCaseFinal;
 }
-
 function snakeCase(string) {
-    lowercaseString = string.toLowerCase()
-    snakeCaseNoWhitespace = removeWhitespace(lowercaseString)
-    snakeCaseArray = snakeCaseNoWhitespace.split(' ')
-    snakeCaseFinal = snakeCaseArray.join('_')
-    return snakeCaseFinal
+    var lowercaseString = string.toLowerCase();
+    var snakeCaseNoWhitespace = removeWhitespace(lowercaseString);
+    var snakeCaseArray = snakeCaseNoWhitespace.split(' ');
+    var snakeCaseFinal = snakeCaseArray.join('_');
+    return snakeCaseFinal;
 }
-
 function camelCase(string) {
-    wordList = string.split(' ')
-    // console.log(wordList)
-    camelCasearray = []
-    camelCasearray.push(wordList[0].toLowerCase())
-    // console.log(camelCasearray)
-    for (let i = 1; i < wordList.length; i++){
-        // console.log(i)
-        camelCasearray.push(capitalize(wordList[i]))
+    var wordList = string.split(' ');
+    var camelCaseArray = [];
+    camelCaseArray.push(wordList[0].toLowerCase());
+    for (var i = 1; i < wordList.length; i++) {
+        camelCaseArray.push(capitalize(wordList[i]));
     }
-    camelCasefinal = camelCasearray.join('')
-    // console.log("______________")
-    // console.log(camelCasearray)
-    // console.log("______________")
-    // console.log(camelCasestring)
-    return camelCasefinal
+    var camelCaseFinal = camelCaseArray.join('');
+    return camelCaseFinal;
 }
-
 function shift(string) {
-    string = string.split('')
-    firstLetter = string.splice(0,1)
-    string.push(firstLetter)
-    final = string.join('')
-    return final
+    var stringArray = string.split('');
+    var firstLetter = stringArray.splice(0, 1);
+    stringArray.push(firstLetter[0]);
+    var final = stringArray.join('');
+    return final;
 }
-
 function makeHashTag(string) {
-    stringArray = string.split(' ')
-    lengthSorted = []
-    // Check length of each string by calling length on each index then if longer splice to index 0 else push to end
-    for (let i = 0; i < stringArray.length; i++){
-        // console.log(i)
+    var stringArray = string.split(' ');
+    var lengthSorted = [];
+    for (var i = 0; i < stringArray.length; i++) {
         if (stringArray[i].length > stringArray[0].length) {
-            lengthSorted.splice(0,0, stringArray[i])
-        } else {
-            lengthSorted.push(stringArray[i])
+            lengthSorted.splice(0, 0, stringArray[i]);
+        }
+        else {
+            lengthSorted.push(stringArray[i]);
         }
     }
-    final = []
-    // get the first 3 longest words add a # at the beginning of the word
-    for (let i = 0; i < 3; i++) {
-        word = lengthSorted[i].toLowerCase()
-        wordArray = word.split('')
-        wordArray.splice(0, 0, "#")
-        hashtag = wordArray.join('')
-        final.push(hashtag)
-        wordArray.length = 0
+    var final = [];
+    for (var i = 0; i < 3; i++) {
+        var word = lengthSorted[i].toLowerCase();
+        var wordArray = word.split('');
+        wordArray.splice(0, 0, "#");
+        var hashtag = wordArray.join('');
+        final.push(hashtag);
     }
-    return final
+    return final;
 }
-
 function isEmpty(string) {
-    trimmed = string.trim()
-    // takes out all white space on the ends
-    stringArray = trimmed.split('')
-    // splits string into an array of characters
-    if (stringArray.length === 0) {
-        return true
-    } else {
-        return false
-    }
+    var trimmed = string.trim();
+    var stringArray = trimmed.split('');
+    return stringArray.length === 0;
 }
-// test = capitalize("hey")
-// console.log(test)
-// test = capitalizeWords('hi i am paul')
-// console.log(test)
-// test = removeWhitespace("          So            much               room       for                       activities")
-// console.log(test)
-// test = camelCase("Camel case")
-module.exports.capitalize = capitalize
-module.exports.allCaps = allCaps
-module.exports.capitalizeWords = capitalizeWords
-module.exports.removeWhitespace = removeWhitespace
-module.exports.kebabCase = kebabCase
-module.exports.snakeCase = snakeCase
-module.exports.camelCase = camelCase
-module.exports.shift = shift
-module.exports.makeHashTag = makeHashTag
-module.exports.isEmpty = isEmpty
