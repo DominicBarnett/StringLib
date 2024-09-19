@@ -1,14 +1,22 @@
 {
-  "name": "stringlib",
-  "version": "1.0.0",
+  "name": "@cabbagesoup/stringlib",
+  "version": "1.0.5",
   "description": "",
-  "main": "src/index.js",
+  "main": "dist/bundle.umd.js",
+  "module": "dist/bundle.esm.js",
+  "exports": {
+    ".": {
+      "require": "./dist/bundle.umd.js",
+      "import": "./dist/bundle.esm.js"
+    }
+  },
+  "types": "dist/types/index.d.ts",
+  "type": "module",
   "scripts": {
     "test": "jest",
     "build": "rollup -c",
     "watch": "rollup -c -w"
   },
-  "type": "module",
   "author": "",
   "license": "ISC",
   "devDependencies": {

@@ -1,4 +1,4 @@
-const fb = require("../src/index")
+const fb = require("../dist/bundle.umd.js")
 
 test('capitalize', () => {
     expect(fb.capitalize("hey")).toBe("Hey")
