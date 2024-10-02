@@ -1,4 +1,5 @@
 String Utility Functions
+Has yml
 This module provides a set of utility functions for manipulating and formatting strings in various ways. Below is a summary of each function:
 
 Functions
@@ -71,4 +72,4 @@ const stringUtils = require('./path_to_this_module');
 
 console.log(stringUtils.capitalize("hello")); // Output: "Hello"
 License
-This module is open-source and available under the MIT License.
+This module is open-source and available under the MIT License. 
