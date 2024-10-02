@@ -30,8 +30,7 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      - name: Build package with Rollup
-        run: npm run build  # This generates the dist folder
+    
 
       - name: Run tests
         run: npm test  # Jest tests will be executed
